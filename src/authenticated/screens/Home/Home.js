@@ -6,7 +6,7 @@ import { styles } from '../../styles/homeStyle'
 import List from '../../../constants/List'
 import TextContainer from './TextContainer'
 
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <View style={styles.container} >
             <TouchableOpacity style={styles.shareBtn}>
@@ -17,7 +17,7 @@ const Home = () => {
             {/* <TouchableOpacity style={styles.moreBtn}>
                 <Text style={styles.btnText}>More</Text>
             </TouchableOpacity> */}
-            <BottomTabBar />
+            <BottomTabBar navigation={navigation}   />
         </View>
     )
 }

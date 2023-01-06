@@ -7,7 +7,7 @@ import FB from '../../assets/Images/Facebook.png'
 import Gmail from '../../assets/Images/Gmail.png'
 import Twitter from '../../assets/Images/Twitter.png'
 
-const SocialLogin = () => {
+const SocialLogin = ({navigation}) => {
   return (
     <View style={styles.container}>
       <CirclesDesign />
@@ -21,7 +21,7 @@ const SocialLogin = () => {
 <TouchableOpacity style={styles.twitter}>
 <Image source={Twitter}  resizeMode='contain' style={styles.imageSocial} />
 </TouchableOpacity>
-<TouchableOpacity style={styles.email}>
+<TouchableOpacity style={styles.email}  onPress={()=>navigation.navigate('Login')} >
 <Image source={Gmail}  resizeMode='contain' style={styles.imageSocial} />
 </TouchableOpacity>
 </View>

@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
         elevation: 5,
     },
     btnText: {
-        color: 'F36D42',
+        color: '#F36D42',
 
     }
 

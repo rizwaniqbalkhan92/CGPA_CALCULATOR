@@ -1,5 +1,5 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from './src/constants/Button'
 import Input from './src/constants/Input'
 import Links from './src/constants/Links'
@@ -16,16 +16,26 @@ import Home from './src/authenticated/screens/Home/Home'
 import AddBtn from './src/constants/AddBtn'
 import AddSemester from './src/authenticated/screens/AddSemester/AddSemester'
 import SubjectModal from './src/constants/subjectModal'
+import SplashScreen from 'react-native-splash-screen'
+import { NavigationContainer } from '@react-navigation/native'
+import AuthNavigation from './src/Navigation/AuthNavigation'
+import ScreensNavigation from './src/Navigation/ScreensNavigation'
 
 const App = () => {
+  useEffect(()=>{
+    SplashScreen.hide();
+  },[])
   return (
-    <View>
+    <NavigationContainer>
+{/* <AuthNavigation/> */}
+{/* <ScreensNavigation/> */}
+{/* // <View> */}
       {/* <Text>App</Text>
       <Button  text={'Get Started'} />
       <Input placeholder={'Enter Name'} />
       <Links btnOneText={'signUp'} btnTwoText={'forgotten'} /> */}
       {/* <CirclesDesign/> */}
-<SocialLogin/>
+{/* <SocialLogin/> */}
 {/* <GetStarted/> */}
 {/* <SignUp/> */}
 {/* <Login/> */}
@@ -37,8 +47,10 @@ const App = () => {
     {/* <AddBtn/> */}
     {/* <AddSemester/> */}
     {/* <SubjectModal/> */}
-    </View>
-  )
+    {/* </View> */}
+  
+    </NavigationContainer>
+    )
 }
 
 export default App

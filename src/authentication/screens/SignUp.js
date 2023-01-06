@@ -5,7 +5,7 @@ import Input from '../../constants/Input'
 import Links from '../../constants/Links'
 import Button from '../../constants/Button'
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.createAccount}>Create Account</Text>
@@ -15,8 +15,8 @@ const SignUp = () => {
                 <Input placeholder={'Confirm Password'} />
             </View>
             <View style={styles.btnAndLinks}>
-            <Links btnOneText={'already account ? Sign In'} btnTwoText={'Forget Password'} />
-            <Button style={styles.btn} text={'Create Account'} />
+            <Links navigation={navigation} btnOneText={'already account ? Sign In'} btnTwoText={'Forget Password'} />
+            <Button navigation={navigation} style={styles.btn} text={'Create Account'} />
             </View>
         </View>
     )

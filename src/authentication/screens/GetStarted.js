@@ -2,8 +2,12 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { styles } from '../styles/getStartedStyle'
 import Button from '../../constants/Button'
+import { useRoute } from '@react-navigation/native';
 
-const GetStarted = () => {
+const GetStarted = ({navigation}) => {
+  const route = useRoute();
+  console.log(route.name);
+
   return (
     <View style={styles.container}>
          <View style={styles.innerContainer}> 
@@ -12,7 +16,7 @@ const GetStarted = () => {
         <Text style={styles.cgpaText} >اعمال نامہ</Text>
 
          </View>
-        <Button   text={'Get Started'}  />
+        <Button navigation={navigation}  text={'Get Started'}  />
         </View>
     </View>
   )

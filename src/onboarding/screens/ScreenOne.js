@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList } from 'react-native'
+import { View, Text, Image, FlatList, Dimensions } from 'react-native'
 import React from 'react'
 import Calculator from '../../assets/Images/calculator.png';
 import Cap from '../../assets/Images/cap.png';
@@ -18,10 +18,13 @@ const OnBoarding = () => {
 
     return (
 <View>
-
-        <FlatList horizontal data={data} renderItem={({ item }) => (
+{/* <CirclesDesign /> */}
+        <FlatList
+        decelerationRate={'fast'}
+        snapToInterval={Dimensions.get('window').width}
+        horizontal data={data} renderItem={({ item }) => (
             <View style={styles.container}>
-                <CirclesDesign />
+
                 <View style={styles.imageAndtext} >
                     <Image source={item.img} style={styles.onboardingImage} resizeMode='contain' />
                     <Text style={styles.onboardingText}>{item.description}</Text>
@@ -33,9 +36,10 @@ const OnBoarding = () => {
                     <View style={styles.dot}></View>
 
                 </View>
-                <Buttons />
+        
             </View>
-        )} />
+        )} />     
+           <Buttons />
         </View>
     )
 }

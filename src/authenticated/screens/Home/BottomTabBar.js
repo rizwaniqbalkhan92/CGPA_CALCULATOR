@@ -6,17 +6,20 @@ import Cal from '../../../assets/Images/Gpa.png'
 import User from '../../../assets/Images/User.png'
 import Exam from '../../../assets/Images/Exam.png'
 
-const BottomTabBar = () => {
+const BottomTabBar = ({navigation}) => {
+
+
+
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.btnTabBar} onPress={() => alert('hello')}>
+            <TouchableOpacity style={styles.btnTabBar} onPress={() =>navigation.navigate('Home')}>
                 <Image source={Home} resizeMode='contain' style={styles.img} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btnTabBar}>
+            <TouchableOpacity style={styles.btnTabBar} onPress={() =>navigation.navigate('AddSemester')}>
                 <Image source={Cal} resizeMode='contain' style={styles.img} />
 
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btnTabBar}>
+            <TouchableOpacity style={styles.btnTabBar} onPress={() =>navigation.navigate('List')}>
                 <Image source={Exam} resizeMode='contain' style={styles.img} />
 
             </TouchableOpacity>
