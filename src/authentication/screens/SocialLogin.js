@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { styles } from '../styles/socialLoginStyle'
 import CirclesDesign from '../../constants/CirclesDesign'
 import Google from '../../assets/Images/Google.png'
@@ -11,28 +11,59 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin'
 // import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 const SocialLogin = ({navigation}) => {
-// useEffect(()=>{
-//   GoogleSignin.configure({});
-// },[])
+  const [data,setData]=useState({})
+useEffect(()=>{
+  GoogleSignin.configure({});
+},[])
 async function onGoogleButtonPress() {
   // Check if your device supports Google Play
-  await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+ await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
   // Get the users ID token
-  const { idToken } = await GoogleSignin.signIn();
-
+  const  idToken  = await GoogleSignin.signIn();
+console.log('token',idToken)
   // Create a Google credential with the token
-  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  // const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
   // Sign-in the user with the credential
-  return auth().signInWithCredential(googleCredential);
+  // return auth().signInWithCredential(googleCredential);
 }
+
+
+ const signIn = async () => {
+  try {
+    await GoogleSignin.hasPlayServices();
+    const userInfo = await GoogleSignin.signIn();
+    console.log('userinfor',userInfo)
+    setData({ userInfo });
+  } catch (error) {
+    console.log('error',error)
+    // if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+    //   console.log('errror',error)
+    //   // user cancelled the login flow
+    // } else if (error.code === statusCodes.IN_PROGRESS) {
+    //   console.log('errror',error)
+
+    //   // operation (e.g. sign in) is in progress already
+    // } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+    //   console.log('errror',error)
+    //   // play services not available or outdated
+    // }
+    //  else {
+    //   console.log('errror',error)
+    //   // some other error happened
+    // }
+  }
+};
   return (
     <View style={styles.container}>
       <CirclesDesign />
 <View style={styles.socialCircle}>
-<TouchableOpacity style={styles.google}  onPress={()=>{onGoogleButtonPress().then((success)=>{
-  console.log('success----',success)
-})}}>
+<TouchableOpacity style={styles.google}  onPress={()=>{
+  signIn()
+//   .then((success)=>{
+//   console.log('success----',success)
+// })
+}}>
 <Image source={Google} resizeMode='contain' style={styles.imageSocial}   />
 </TouchableOpacity>
 <TouchableOpacity style={styles.facebook}>
