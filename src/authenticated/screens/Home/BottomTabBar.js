@@ -23,7 +23,7 @@ const BottomTabBar = ({navigation}) => {
                 <Image source={Exam} resizeMode='contain' style={styles.img} />
 
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btnTabBar}>
+            <TouchableOpacity style={styles.btnTabBar}  onPress={() =>navigation.navigate('Profile')}>
                 <Image source={User} resizeMode='contain' style={styles.img} />
 
             </TouchableOpacity>

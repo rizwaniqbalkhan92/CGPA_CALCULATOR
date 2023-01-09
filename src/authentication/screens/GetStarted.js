@@ -2,11 +2,11 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { styles } from '../styles/getStartedStyle'
 import Button from '../../constants/Button'
-import { useRoute } from '@react-navigation/native';
+// import { useRoute } from '@react-navigation/native';
 
 const GetStarted = ({navigation}) => {
-  const route = useRoute();
-  console.log(route.name);
+  // const route = useRoute();
+  // console.log(route.name);
 
   return (
     <View style={styles.container}>

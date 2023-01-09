@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "234350170687",
+    "project_id": "cgpa-ubit",
+    "storage_bucket": "cgpa-ubit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234350170687:android:1dd088343109c9c61d9e8a",
+        "android_client_info": {
+          "package_name": "com.cgpa_cal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234350170687-mg8mqkh0dflgm7erb38fg0em3fnnqdmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhylbIjNoh9Tw8uXL6qyTMxNvTFa3aMcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234350170687-mg8mqkh0dflgm7erb38fg0em3fnnqdmh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

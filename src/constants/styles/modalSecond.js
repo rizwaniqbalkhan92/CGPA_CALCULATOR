@@ -5,7 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 export const styles = StyleSheet.create({
     container:{
         width:wp('95%'),
-        height:hp('22%'),
+        height:hp('60%'),
         alignSelf:'center',
         backgroundColor:'#F36D42',
         borderRadius:10,
@@ -19,6 +19,10 @@ export const styles = StyleSheet.create({
         alignItems:'center',
         height:hp('100%'),
 
+    },
+    inputParent:{
+        width:wp('90%'),
+        
     },
     crossBtn:{
         backgroundColor:'white',borderRadius:50,

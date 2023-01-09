@@ -27,7 +27,7 @@ const App = () => {
   },[])
   return (
     <NavigationContainer>
-{/* <AuthNavigation/> */}
+<AuthNavigation/>
 {/* <ScreensNavigation/> */}
 {/* // <View> */}
       {/* <Text>App</Text>
