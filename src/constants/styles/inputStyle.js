@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         color:'F36D42',
         backgroundColor: 'white',
+        color:'#000',
         padding:wp('3%'),
         
         shadowColor: "#000",
